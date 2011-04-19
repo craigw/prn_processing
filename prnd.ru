@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + 'prn')
 
 class PrnProcessor
   @@incoming = SMQueue :name => "/queue/prn.incoming",
-    :host => "mq.picklive.com, :adapter => :StompAdapter
+    :host => "mq.picklive.com", :adapter => :StompAdapter
 
   def call request
     prn = Prn.from_request request
